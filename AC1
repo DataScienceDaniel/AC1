@@ -1,0 +1,110 @@
+package main
+
+import "fmt"
+
+func main() {
+	var num int
+
+	fmt.Println("Diga um número:  ")
+	fmt.Scan(&num)
+
+	 if e_primo(num) {
+		fmt.Println(e_primo(num))
+	 } else {
+		divisores(num)
+	 }
+
+
+	var num1 int
+	fmt.Print("Digite a Posição: ")
+	fmt.Scan(&num1)
+
+    fibo(num1)
+	if fibo(num1) != -1 {
+		fmt.Println(fibo(num1))
+
+	}
+
+
+	var num2 int
+	fmt.Println("Diga um número:  ")
+	fmt.Scan(&num2)
+	exibir_dia(num2)
+
+	var num3 int
+
+	fmt.Println("Diga um Ano:  ")
+	fmt.Scan(&num3)
+	bissexto(num3)
+
+
+
+}
+func e_primo(num int) bool{
+	e_primo := true
+     for i := 2 ; i < num ; i++ {
+		if num % i == 0 {
+			return !e_primo
+
+		}
+	 }
+	return e_primo
+	}
+
+
+func divisores(num int) {
+	for i := 1 ; i < num ; i++ {
+		if num % i == 0 {
+			fmt.Println(i)
+		}
+	}
+
+}
+func fibo(n int) int {
+	if n <= 0 {
+		return -1
+	} else if n == 1 || n == 2 {
+		return 1
+	}
+
+	termo1 := 1
+	termo2 := 1
+	termo3 := 2
+
+	for i := 3; i <= n; i++ {
+		termo3  = termo1 + termo2
+		termo1, termo2 = termo2, termo3
+	}
+
+	return termo3
+}
+func exibir_dia(dia int) {
+	switch dia {
+    case 1:
+        fmt.Println("Domingo")
+    case 2:
+        fmt.Println("Segunda")
+    case 3:
+        fmt.Println("Terça")
+	case 4:
+		fmt.Println("Quarta")
+	case 5:
+		fmt.Println("Quinta")
+	case 6:
+		fmt.Println("Sexta")
+	case 7:
+		fmt.Println("Sábado")
+	default:
+		fmt.Println("Inválido")
+}
+}
+func bissexto(ano int) {
+	if ano % 100 == 0 && ano % 400 != 0 {
+	   fmt.Println("Nao é bissexto")
+
+   } else if ano % 4 == 0 {
+	   fmt.Println("Bissexto")
+	   } else {
+	   fmt.Println("Nao é bissexto")
+   }
+   }
