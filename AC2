@@ -51,9 +51,7 @@ func adicionaContato(nome string, email string , i [5]Contato) [5]Contato {
 
 }
 
-func excluiContato() {
-	
-}
+
 
 
 
