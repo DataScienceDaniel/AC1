@@ -1,0 +1,62 @@
+package main
+
+import "fmt"
+
+type Contato struct {
+	Nome string
+	Email string
+}
+
+func main() {
+	var c Contato
+	var alterar bool
+	c = Contato{
+		Nome: "Daniel",
+		Email: "daniellloydaus@gmail.com",
+	}
+
+	alterarEmail(alterar)
+
+
+	var contatos[5]Contato
+
+	contatos[0] = c
+	for _, contato := range contatos {
+		if (contato != Contato{}){
+			fmt.Println(contato)
+		}
+	}
+
+
+
+	contatos = adicionaContato("Thiago","thiagoborsoni@gmail.com", contatos)
+	fmt.Println(contatos)
+}
+
+func alterarEmail(alterar bool)  {
+	fmt.Println("Você deseja alterar seu email? ")
+	fmt.Scan(alterar)
+	if (alterar == true){
+		fmt.Println("Digite seu novo Email")
+		fmt.Scan(alterar)
+	} else {
+		fmt.Println("Seu email vai se manter o mesmo.")
+	}
+
+}
+
+func adicionaContato(nome string, email string , i [5]Contato) [5]Contato {
+	i[0] = Contato{Nome: nome, Email: email,}
+	return i
+
+}
+
+func excluiContato() {
+	
+}
+
+
+
+
+
+
