@@ -34,7 +34,7 @@ func main() {
 			fmt.Print("Informe o seu email: ")
 			fmt.Scanln(&email)
 
-			contatos = arrays.AdicionaContato((c contatos *[5]ctt.Contato) {Nome: nome, Email: email}, contatos)
+			contatos = arrays.AdicionaContato((contatos *[5]ctt.Contato) {Nome: nome, Email: email}, contatos)
 		case "2":
 			contatos = arrays.ExcluiContato(contatos)
 		default:
