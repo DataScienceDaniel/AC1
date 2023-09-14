@@ -45,7 +45,7 @@ func insereOrd(v *[M]int, n *int, novoValor int) {
 func buscaOrd(v [M]int , n, x int ) int {
 	i := 0
 	v[n] = x
-	for v[i] < x {
+	for v[i] == x {
 		i++
 	}
 		if i == n + 1 || v[i] != x {
